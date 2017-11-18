@@ -24,30 +24,31 @@ function plugin(options) {
 
     setImmediate(done);
     Object.keys(files).forEach(function(file) {
-      var data = files[file];
-      var processedCount;
 
-      // Only process HTML files.
-      if (isHTML(file) === false) {
+      var processedCounts;
+
+      if (isHTML(file) === false) { // only parse HTML-files
         return;
       }
 
-      // Count the number of paragraphs.
-      processedCount = processHTML(files[file].contents, opts);
+      processedCounts = processHTML(files[file].contents, opts);
 
-      files[file][opts.metaParagraphCount] = processedCount.count;
+      files[file][opts.metaKeyCount] = processedCounts.count;
     });
-  }
+  };
 }
 
 // Count the paragraphs in a piece of HTML.
 function processHTML(contents, opts) {
   var $ = cheerio.load(contents);
+  var paragraphs = $.find('p, ul, ol, pre, table');
 
+/*
   // Split the text by <p> tags, remove any empty strings, then return the array length.
-  var paragraphs = contents.html().match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).filter(
+  var paragraphs = $.html().match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).filter(
     function(text) { return /\S/.test(text); }
   );
+*/
   var paragraphCount = (paragraphs !== null) ? paragraphs.length : 0;
 
   return {
