@@ -1,0 +1,26 @@
+{
+  "name": "metalsmith-paragraph-count",
+  "description": "Computes the number of paragraphs within a HTML file.",
+  "main": "index.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "paragraph"
+  ],
+  "author": "Paul Kerrigan <pauljameskerrigan@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PJKerrigan/metalsmith-paragraph-count.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PJKerrigan/metalsmith-paragraph-count/issues"
+  },
+  "homepage": "https://github.com/PJKerrigan/metalsmith-paragraph-count#readme"
+}
