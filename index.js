@@ -27,7 +27,8 @@ function plugin(options) {
 
       var processedCounts;
 
-      if (isHTML(file) === false) { // only parse HTML-files
+      // Only parse HTML files.
+      if (isHTML(file) === false) {
         return;
       }
 
@@ -41,14 +42,11 @@ function plugin(options) {
 // Count the paragraphs in a piece of HTML.
 function processHTML(contents, opts) {
   var $ = cheerio.load(contents);
-  var paragraphs = $.find('p, ul, ol, pre, table');
 
-/*
   // Split the text by <p> tags, remove any empty strings, then return the array length.
   var paragraphs = $.html().match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).filter(
     function(text) { return /\S/.test(text); }
   );
-*/
   var paragraphCount = (paragraphs !== null) ? paragraphs.length : 0;
 
   return {
