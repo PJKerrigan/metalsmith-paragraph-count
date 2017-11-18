@@ -45,9 +45,7 @@ function processHTML(contents, opts) {
   var html = $.html();
 
   // Split the text by <p> tags, remove any empty strings, then return the array length.
-  var paragraphs = html.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g).filter(
-    function(text) { return /\S/.test(text); }
-  );
+  var paragraphs = html.match(/<(p|ul|ol|pre|table)>[\s\S]*?<\/\1>/g);
   var paragraphCount = (paragraphs !== null) ? paragraphs.length : 0;
 
   return {
