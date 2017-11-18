@@ -34,7 +34,7 @@ function plugin(options) {
 
       processedCounts = processHTML(files[file].contents, opts);
 
-      files[file][opts.metaKeyCount] = processedCounts.count;
+      files[file][opts.metaParagraphCount] = processedCounts.count;
     });
   };
 }
