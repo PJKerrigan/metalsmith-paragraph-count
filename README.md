@@ -4,6 +4,8 @@
 
 ## Installation
 
+This doesn't work yet as I forgot to upload it to NPM.
+
 ```bash
 npm install --save metalsmith-paragraph-count
 ```
